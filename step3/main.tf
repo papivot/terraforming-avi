@@ -82,7 +82,7 @@ resource "avi_ipamdnsproviderprofile" "wcp_dns" {
 	type	             = "IPAMDNS_TYPE_INTERNAL_DNS"
 	internal_profile {
 		dns_service_domain {
-			domain_name  = "k8s.env1.lab.test"
+			domain_name  = "k8s.${var.search_domain}"
 			pass_through = false
 			record_ttl   = 30
 		}

@@ -45,7 +45,7 @@ variable "avi_version" {
   default = "22.1.3"
 }
 
-variable "avi_cloud_name" {
+variable "cloud_name" {
   type    = string
   default = "Default-Cloud"
 }
@@ -65,9 +65,26 @@ variable "vcenter_datacenter" {
   default = "Pacific-Datacenter"
 }
 
+variable "vcenter_cluster" {
+  type    = string
+  default = "Supervisor-Cluster"
+}
+
+variable "vcenter_vds"{
+  type   = string
+  default = "Pacific-VDS"
+}
+
+# Assumes management and VIP network on the same VDS
 variable "vcenter_management_network" {
   type    = string
   default = "DVPG-Management-network"
+}
+
+# Assumes management and VIP network on the same VDS
+variable "vcenter_vip_network" {
+  type    = string
+  default = "Workload0-VDS-PG"
 }
 
 variable "vcenter_privilege" {

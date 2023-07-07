@@ -2,6 +2,10 @@ variable "avi_controller_ips" {
   default = ["192.168.100.58"]
 }
 
+variable "avi_dns_name" {
+  default = "avi.env1.lab.test"
+}
+
 variable "avi_dns_server_ips" {
     default = "192.168.100.1"
 }
@@ -13,6 +17,7 @@ variable "avi_ntp_server_ips" {
 variable "avi_license" {
   default = "ENTERPRISE"
 }
+
 variable "avi_default_license_tier" {
   default = "ENTERPRISE"
 }
@@ -65,7 +70,7 @@ variable "vcenter_cluster" {
   default = "Supervisor-Cluster"
 }
 
-variable "vcenter_management_network"{
+variable "vcenter_vds"{
   type   = string
   default = "Pacific-VDS"
 }
