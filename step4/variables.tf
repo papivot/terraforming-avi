@@ -15,7 +15,6 @@ variable "avi_license" {
 }
 variable "avi_default_license_tier" {
   default = "ENTERPRISE"
-# default = "ENTERPRISE_WITH_CLOUD_SERVICES"
 }
 
 variable "avi_current_password" {
@@ -39,11 +38,6 @@ variable "avi_password" {
 variable "avi_version" {
   type    = string
   default = "22.1.3"
-}
-
-variable "tenant" {
-  type    = string
-  default = "admin"
 }
 
 variable "cloud_name" {
@@ -71,11 +65,18 @@ variable "vcenter_cluster" {
   default = "Supervisor-Cluster"
 }
 
+variable "vcenter_vds"{
+  type   = string
+  default = "Pacific-VDS"
+}
+
+# Assumes management and VIP network on the same VDS
 variable "vcenter_management_network" {
   type    = string
   default = "DVPG-Management-network"
 }
 
+# Assumes management and VIP network on the same VDS
 variable "vcenter_vip_network" {
   type    = string
   default = "Workload0-VDS-PG"

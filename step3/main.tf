@@ -7,7 +7,7 @@ data "vsphere_datacenter" "wcp_datacenter" {
 }
 
 data "vsphere_distributed_virtual_switch" "wcp_vds" {
-  name          = "Pacific-VDS"
+  name          = var.vcenter_vds
   datacenter_id = data.vsphere_datacenter.wcp_datacenter.id
 }
 
@@ -29,7 +29,7 @@ data "vsphere_compute_cluster" "wcp_cluster" {
 }
 
 data "avi_tenant" "tenant" {
-  name = var.tenant
+  name = var.avi_tenant
 }
 
 data "avi_cloud" "default" {
@@ -42,7 +42,7 @@ data "avi_vrfcontext" "vrf_global" {
 
 data "avi_serviceenginegroup" "wcp_serviceenginegroup" {
   name = "Default-Group"
-  cloud_ref = "/api/cloud/?tenant=${var.tenant}&name=${var.cloud_name}"
+  cloud_ref = "/api/cloud/?tenant=${var.avi_tenant}&name=${var.cloud_name}"
 }
 
 resource "avi_vrfcontext" "vrf_global" {

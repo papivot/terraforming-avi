@@ -3,7 +3,7 @@ data "vsphere_datacenter" "wcp_datacenter" {
 }
 
 data "vsphere_distributed_virtual_switch" "wcp_vds" {
-  name          = "Pacific-VDS"
+  name          = var.vcenter_vds
   datacenter_id = data.vsphere_datacenter.wcp_datacenter.id
 }
 
@@ -20,7 +20,7 @@ data "vsphere_network" "wcp_vip_network" {
 }
 
 data "avi_tenant" "tenant" {
-  name = var.tenant
+  name = var.avi_tenant
 }
 
 data "avi_cloud" "default" {
@@ -33,12 +33,12 @@ data "avi_vrfcontext" "vrf_global" {
 
 data "avi_network" "wcp_management" {
   name = var.vcenter_management_network
-  cloud_ref = "/api/cloud/?tenant=${var.tenant}&name=${var.cloud_name}"
+  cloud_ref = "/api/cloud/?tenant=${var.avi_tenant}&name=${var.cloud_name}"
 }
 
 data "avi_network" "wcp_vip_pool" {
   name = var.vcenter_vip_network
-  cloud_ref = "/api/cloud/?tenant=${var.tenant}&name=${var.cloud_name}"
+  cloud_ref = "/api/cloud/?tenant=${var.avi_tenant}&name=${var.cloud_name}"
 }
 
 data "avi_ipamdnsproviderprofile" "wcp_ipam" {
