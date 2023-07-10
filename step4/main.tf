@@ -51,11 +51,11 @@ data "avi_ipamdnsproviderprofile" "wcp_ipam" {
 # terraform import avi_ipamdnsproviderprofile.wcp_ipam https://192.168.100.58/api/ipamdnsproviderprofile/ipamdnsproviderprofile-70e1a9ad-d0f0-4a50-bb6b-741998725b03
 
 output "import_mgmt" {
-  value = "terraform import avi_network.wcp_management https://192.168.100.58/api/network/${data.vsphere_network.wcp_mgmt_network.id}-${data.avi_cloud.default.uuid}"
+  value = "terraform import avi_network.wcp_management https://${var.avi_controller_ips[0]}/api/network/${data.vsphere_network.wcp_mgmt_network.id}-${data.avi_cloud.default.uuid}"
 }
 
 output "vip" {
-  value = "terraform import avi_network.wcp_vip_pool https://192.168.100.58/api/network/${data.vsphere_network.wcp_vip_network.id}-${data.avi_cloud.default.uuid}"
+  value = "terraform import avi_network.wcp_vip_pool https://${var.avi_controller_ips[0]}/api/network/${data.vsphere_network.wcp_vip_network.id}-${data.avi_cloud.default.uuid}"
 }
 
 output "def_ipam" {
