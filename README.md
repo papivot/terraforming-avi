@@ -1,3 +1,14 @@
+Step 1. Clone the Repo -
+```shell
+git clone https://github.com/papivot/terraforming-avi.git
+cd terraforming-avi
+```
+
+Step 2. Modify the variable file in the root folder of the repo. 
+```shell
+# vi variable.tf
+```
+
 ```shell 
 cd ../step1; terraform init; terraform plan; terraform apply -auto-approve
 cd ../step2; terraform init; terraform plan; terraform apply -auto-approve
