@@ -11,6 +11,7 @@ cp sample-variables.tf ./step1/variables.tf ./step2/variables.tf ./step3/variabl
 cd ./step1
 ```
 
+Step3. Execute the 4 plans. 
 ```shell 
 cd ../step1; terraform init; terraform plan; terraform apply -auto-approve
 cd ../step2; terraform init; terraform plan; terraform apply -auto-approve
