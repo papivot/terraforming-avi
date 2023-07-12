@@ -6,7 +6,9 @@ cd terraforming-avi
 
 Step 2. Modify the variable file in the root folder of the repo. 
 ```shell
-# vi variable.tf
+# vi sample-variables.tf
+cp sample-variables.tf ./step1/variables.tf ./step2/variables.tf ./step3/variables.tf ./step4/variables.tf
+cd ./step1
 ```
 
 ```shell 
