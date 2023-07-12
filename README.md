@@ -4,14 +4,14 @@ git clone https://github.com/papivot/terraforming-avi.git
 cd terraforming-avi
 ```
 
-Step 2. Modify the variable file in the root folder of the repo. 
+Step 2. Modify the variable file in the root folder of the repo. Copy the file to all the folders - 
 ```shell
 # vi sample-variables.tf
-cp sample-variables.tf ./step1/variables.tf ./step2/variables.tf ./step3/variables.tf ./step4/variables.tf
+echo ./step1/variables.tf ./step2/variables.tf ./step3/variables.tf ./step4/variables.tf |xargs -n 1 cp -v sample-variables.tf
 cd ./step1
 ```
 
-Step3. Execute the 4 plans. 
+Step3. Execute the 4 plans -  
 ```shell 
 cd ../step1; terraform init; terraform plan; terraform apply -auto-approve
 cd ../step2; terraform init; terraform plan; terraform apply -auto-approve
