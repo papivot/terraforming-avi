@@ -2,7 +2,7 @@ terraform {
   required_providers {
     avi = {
       source  = "vmware/avi"
-      version = var.avi_version
+      version = "22.1.3"
     }
   }
 }
