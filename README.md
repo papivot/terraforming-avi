@@ -1,4 +1,4 @@
-* For Default Cloud Setup
+# Default Cloud Setup
 ---
 Step 1. Clone the Repo -
 ```shell
@@ -25,4 +25,25 @@ cd ../step4; terraform init; terraform plan;
 # terraform import avi_network.wcp_management https://192.168.100.58/api/network/dvportgroup-71-cloud-01eedfb7-9f4b-4e6b-a8b5-239da6c89c76
 # terraform import avi_network.wcp_vip_pool https://192.168.100.58/api/network/dvportgroup-72-cloud-01eedfb7-9f4b-4e6b-a8b5-239da6c89c76
 terraform apply -auto-approve
+```
+---
+# Custom Cloud Setup
+
+The setup will use the vSphere Cluster ID as the name of the vSphere Cloud. 
+
+Step 1. Clone the Repo -
+```shell
+git clone https://github.com/papivot/terraforming-avi.git
+cd terraforming-avi
+```
+
+Step 2. Modify the variable file in the root folder of the repo. Copy the file to all the folders - 
+```shell
+# vi sample-variables.tf
+echo ./non-default-cloud/variables.tf |xargs -n 1 cp -v sample-variables.tf
+```
+
+Step3. Execute the 4 plans -  
+```shell 
+cd ./non-default-cloud; terraform init; terraform plan; terraform apply -auto-approve
 ```
