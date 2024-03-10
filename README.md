@@ -1,3 +1,5 @@
+* For Default Cloud Setup
+---
 Step 1. Clone the Repo -
 ```shell
 git clone https://github.com/papivot/terraforming-avi.git
