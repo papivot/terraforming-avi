@@ -3,7 +3,7 @@ variable "avi_controller_ips" {
 }
 
 variable "avi_dns_name" {
-  default = "avi.env1.lab.test"
+  default = "pacific-avi1.env1.lab.test"
 }
 
 variable "avi_dns_server_ips" {
@@ -11,7 +11,7 @@ variable "avi_dns_server_ips" {
 }
 
 variable "avi_ntp_server_ips" {
-  default = "10.128.152.81, 10.62.4.1"
+  default = "10.188.26.119, 10.166.1.120"
 }
 
 variable "avi_license" {
@@ -42,7 +42,7 @@ variable "avi_password" {
 
 variable "avi_version" {
   type    = string
-  default = "22.1.3"
+  default = "22.1.5"
 }
 
 variable "cloud_name" {
